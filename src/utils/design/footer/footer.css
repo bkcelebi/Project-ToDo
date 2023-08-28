@@ -1,0 +1,29 @@
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+.footerWrapper {
+  background: white;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+img {
+  width: 5rem;
+}
+
+img.github {
+  width: 1rem;
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
