@@ -1,0 +1,16 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+  background: white;
+}
+
+select,
+button {
+  border: none;
+  padding: 0.5rem;
+  background: #eeeeee;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
