@@ -1,11 +1,10 @@
 main {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   justify-items: center;
 }
-.col {
+.cont {
   padding: 1rem;
-  width: 300px;
+  width: 90%;
   background: white;
   margin-top: 1rem;
   border-radius: 0.25rem;
@@ -19,20 +18,65 @@ main {
 }
 
 .ent {
+  display: grid;
+  gap: 1rem;
+}
+
+.todo {
   border: 1px solid #eee;
-  padding: 0.5rem;
+  border-radius: 0.25rem;
+  padding: 1rem;
 }
 
 button.addTask {
   margin-top: 1rem;
   background: white;
   border: 1px solid #eee;
-  width: 100%;
+  padding: 0.5rem 1rem;
 }
 
-button.addSection {
-  position: absolute;
-  bottom: 4rem;
-  right: 0;
-  background: white;
+.addProjectBtn,
+.dateSelector,
+.projectSelector {
+  display: none;
+}
+
+@media (min-width: 700px) {
+  main {
+    height: 95vh;
+    align-items: center;
+  }
+
+  .cont {
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 50px auto;
+    gap: 1rem;
+    width: 700px;
+  }
+
+  .layout {
+    padding: 1rem;
+    grid-row: 2/3;
+    grid-column: 1/4;
+    width: 100%;
+    justify-self: start;
+    border: 1px solid #eee;
+    border-radius: 0.25rem;
+  }
+
+  .ent {
+    grid-template-columns: repeat(2, auto);
+    padding: 0;
+  }
+
+  .addProjectBtn,
+  .dateSelector,
+  .projectSelector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-row: 1/2;
+    width: 10rem;
+  }
 }

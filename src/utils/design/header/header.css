@@ -1,7 +1,7 @@
 header {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 1rem;
   background: white;
 }
@@ -13,4 +13,10 @@ button {
   background: #eeeeee;
   border-radius: 0.25rem;
   cursor: pointer;
+}
+
+@media (min-width: 700px) {
+  header {
+    display: none;
+  }
 }

@@ -4,37 +4,68 @@ const header = () => {
   const content = document.querySelector("#content");
 
   const header = document.createElement("header");
-  // const swWrapper = document.createElement("div");
-  const sw = document.createElement("select");
-  const project = document.createElement("option");
-  const notes = document.createElement("option");
-  const swImg = document.createElement("img");
-  const projectName = document.createElement("select");
-  const defaultProject = document.createElement("option");
-  const addProject = document.createElement("button");
+
+  const projectSelector = selectProject();
+  const date = selectDate();
+  const addProject = addProjectBtn();
 
   content.appendChild(header);
-  header.appendChild(sw);
-  // header.appendChild(swWrapper);
-  // swWrapper.appendChild(sw);
-  // swWrapper.appendChild(swImg);
-  sw.appendChild(project);
-  sw.appendChild(notes);
-  header.appendChild(projectName);
-  projectName.appendChild(defaultProject);
-
+  header.appendChild(projectSelector);
+  header.appendChild(date);
   header.appendChild(addProject);
+};
 
-  project.value = "project";
-  project.innerText = "Project";
-  notes.value = "notes";
-  notes.innerText = "Notes";
-  defaultProject.value = "today";
-  defaultProject.innerText = "Today";
+const selectProject = () => {
+  const projectSelector = document.createElement("select");
+  const project = document.createElement("option");
+  const sampleProject = document.createElement("option");
 
+  projectSelector.appendChild(project);
+  projectSelector.appendChild(sampleProject);
+
+  project.value = "All projects";
+  project.innerText = "All Projects";
+
+  sampleProject.value = "my project";
+  sampleProject.innerText = "My Project";
+
+  return projectSelector;
+};
+
+const selectDate = () => {
+  const date = document.createElement("select");
+  const allTime = document.createElement("option");
+  const today = document.createElement("option");
+  const thisWeek = document.createElement("option");
+  const thisMonth = document.createElement("option");
+  const thisYear = document.createElement("option");
+
+  date.appendChild(allTime);
+  date.appendChild(today);
+  date.appendChild(thisWeek);
+  date.appendChild(thisMonth);
+  date.appendChild(thisYear);
+
+  allTime.value = "allTime";
+  allTime.innerText = "All Time";
+  today.value = "today";
+  today.innerText = "Today";
+  thisWeek.value = "thisWeek";
+  thisWeek.innerText = "This Week";
+  thisMonth.value = "thisMonth";
+  thisMonth.innerText = "This Month";
+  thisYear.value = "thisYear";
+  thisYear.innerText = "This Year";
+
+  return date;
+};
+
+const addProjectBtn = () => {
+  const addProject = document.createElement("button");
   addProject.innerText = "Add Project";
 
-  header.classList.add();
+  return addProject;
 };
 
 export default header;
+export { selectProject, selectDate, addProjectBtn };
